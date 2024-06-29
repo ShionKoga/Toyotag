@@ -46,12 +46,10 @@ struct iosApp: App {
 }
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-    // UIApplication.shared.registerForRemoteNotifications()が成功すると呼び出される
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
         let token = tokenParts.joined()
         print("Device Token: \(token)")
-        // ここでサーバーにトークンを送信する
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: any Error) {
