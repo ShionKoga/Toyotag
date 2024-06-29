@@ -1,0 +1,9 @@
+apns:
+  team-id: ${APNS_TEAM_ID}
+  key-id: ${APNS_KEY_ID}
+  bundle-id: ${APNS_BUNDLE_ID}
+  auth-key: ${APNS_AUTH_KEY}
+spring:
+  application:
+    name:
+      server

@@ -1,0 +1,4 @@
+export APNS_TEAM_ID=""
+export APNS_KEY_ID=""
+export APNS_BUNDLE_ID=""
+export APNS_AUTH_KEY=""
