@@ -21,10 +21,15 @@ interface AuthUserService {
 
 @Service
 class DefaultAuthUserService(
-    private val jwtEncoder: JwtEncoder
+    private val jwtEncoder: JwtEncoder,
+    private val userRepository: UserRepository,
 ): AuthUserService {
     override fun createOrGet(user: Jwt): UserResponse {
         val email = user.getClaimAsString("email")
+        if (!userRepository.existsById(email)) {
+            userRepository.save(UserRecord(email))
+        }
+
         val jwsHeader = JwsHeader.with { "HS256" }.build()
         val claims = JwtClaimsSet.builder()
             .issuedAt(Instant.now())

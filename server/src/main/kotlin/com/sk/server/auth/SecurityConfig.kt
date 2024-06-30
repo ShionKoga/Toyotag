@@ -45,7 +45,8 @@ class SecurityConfig {
         return http.securityMatcher("/api/**")
             .csrf { it.disable() }
             .authorizeHttpRequests {
-                it.anyRequest().permitAll()
+                it.requestMatchers("/api/notifications/send").permitAll()
+                it.anyRequest().authenticated()
             }
             .addFilterBefore(BearerTokenAuthenticationFilter(authenticationManager), AnonymousAuthenticationFilter::class.java)
             .build()

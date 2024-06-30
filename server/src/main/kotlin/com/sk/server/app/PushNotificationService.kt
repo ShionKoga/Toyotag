@@ -16,6 +16,7 @@ import java.util.*
 
 interface PushNotificationService {
     fun send(deviceToken: String, message: String)
+    fun saveDeviceTokenByUserId(userId: String, deviceToken: String)
 }
 
 @Service
@@ -24,6 +25,7 @@ class ApnsService(
     @Value("\${apns.key-id}") private val keyId: String,
     @Value("\${apns.bundle-id}") private val bundleId: String,
     @Value("\${apns.auth-key}") private val authKey: String,
+    private val deviceTokenRepository: DeviceTokenRepository,
 ): PushNotificationService {
     private val httpClient = OkHttpClient.Builder()
         .protocols(listOf(Protocol.HTTP_2, Protocol.HTTP_1_1))
@@ -42,6 +44,10 @@ class ApnsService(
         httpClient.newCall(request).execute().use { response ->
             if (!response.isSuccessful) throw IOException("Unexpected code $response")
         }
+    }
+
+    override fun saveDeviceTokenByUserId(userId: String, deviceToken: String) {
+        deviceTokenRepository.save(DeviceTokenRecord(deviceToken, userId))
     }
 
     private fun generateJwtToken(): String {

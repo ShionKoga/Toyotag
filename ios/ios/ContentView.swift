@@ -2,7 +2,7 @@ import SwiftUI
 import AuthenticationServices
 
 struct ContentView: View {
-    @State var user: User?
+    @Binding var user: User?
     
     var body: some View {
         if let user = user {
@@ -91,11 +91,7 @@ struct LoginScreen: View {
     }
 }
 
-struct User: Decodable {
+struct User: Decodable, Equatable {
     let email: String
     let accessToken: String
-}
-
-#Preview {
-    ContentView()
 }
