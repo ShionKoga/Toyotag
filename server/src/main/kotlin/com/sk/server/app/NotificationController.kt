@@ -1,4 +1,4 @@
-package com.sk.server
+package com.sk.server.app
 
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody

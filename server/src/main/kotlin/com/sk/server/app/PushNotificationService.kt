@@ -1,4 +1,4 @@
-package com.sk.server
+package com.sk.server.app
 
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm

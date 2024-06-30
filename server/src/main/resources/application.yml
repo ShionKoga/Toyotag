@@ -1,3 +1,5 @@
+auth:
+  secret: ${JWT_AUTH_SECRET}
 apns:
   team-id: ${APNS_TEAM_ID}
   key-id: ${APNS_KEY_ID}
