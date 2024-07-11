@@ -77,7 +77,9 @@ struct LoginScreen: View {
                     print("Authorization failed: " + error.localizedDescription)
                 }
             }
+            .frame(height: 50)
         }
+        .padding()
     }
     
     private func getMe(with idToken: String) {

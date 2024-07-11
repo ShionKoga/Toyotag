@@ -14,6 +14,8 @@
 		7B15E1B22C304E02007D7B61 /* iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B15E1B12C304E02007D7B61 /* iosTests.swift */; };
 		7B15E1BC2C304E02007D7B61 /* iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B15E1BB2C304E02007D7B61 /* iosUITests.swift */; };
 		7B15E1BE2C304E02007D7B61 /* iosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B15E1BD2C304E02007D7B61 /* iosUITestsLaunchTests.swift */; };
+		7BD3CDA12C319242002C834B /* Notifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD3CDA02C319242002C834B /* Notifiable.swift */; };
+		7BD3CDA32C319267002C834B /* Subscribable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD3CDA22C319267002C834B /* Subscribable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		7B15E1BD2C304E02007D7B61 /* iosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7B15E1CA2C305129007D7B61 /* ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ios.entitlements; sourceTree = "<group>"; };
 		7B15E1CB2C305181007D7B61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7BD3CDA02C319242002C834B /* Notifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifiable.swift; sourceTree = "<group>"; };
+		7BD3CDA22C319267002C834B /* Subscribable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscribable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 		7B15E19F2C304E02007D7B61 /* ios */ = {
 			isa = PBXGroup;
 			children = (
+				7BD3CD9F2C319233002C834B /* Extensions */,
 				7B15E1CB2C305181007D7B61 /* Info.plist */,
 				7B15E1CA2C305129007D7B61 /* ios.entitlements */,
 				7B15E1A02C304E02007D7B61 /* iosApp.swift */,
@@ -129,6 +134,15 @@
 				7B15E1BD2C304E02007D7B61 /* iosUITestsLaunchTests.swift */,
 			);
 			path = iosUITests;
+			sourceTree = "<group>";
+		};
+		7BD3CD9F2C319233002C834B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7BD3CDA02C319242002C834B /* Notifiable.swift */,
+				7BD3CDA22C319267002C834B /* Subscribable.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +276,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B15E1A32C304E02007D7B61 /* ContentView.swift in Sources */,
+				7BD3CDA12C319242002C834B /* Notifiable.swift in Sources */,
+				7BD3CDA32C319267002C834B /* Subscribable.swift in Sources */,
 				7B15E1A12C304E02007D7B61 /* iosApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
